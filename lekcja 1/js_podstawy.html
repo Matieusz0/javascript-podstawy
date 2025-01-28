@@ -42,9 +42,9 @@ document.write("<br><br>");
 //pętla for
 document.write("Pętla for<br>");
 
-for (var i = 0; i < 10;){
-   ++i // JS pozwala na zmniejszanie lub zwiększanie licznika pętli w bloku instrukcji
-document.write(i + "<br>");
+for (var i = 2; i <= 100; i+=2){
+  // JS pozwala na zmniejszanie lub zwiększanie licznika pętli w bloku instrukcji
+document.write(i + "; ");
 
 }
 
@@ -57,9 +57,9 @@ document.write("<br><br>");
 document.write("Pętla while<br>");
 var w = 0;
 while (w < 10) {    // pętla while wykonuje blok instrukcji dopóki warunek pętli jest spełniony
-    
-document.write(w + "<br>");
    w++;
+document.write(w + "; ");
+  
 }
 
 document.write("<br><br>");
@@ -71,7 +71,7 @@ var x = 3;
 var y = 4;
 var z;
 document.write("Wartosci zmiennych: x = " +x+"; y = 4;<br>");
-z = y +7;
+z = y + 7;
 document.write("Operacja z = y + 7, wynik z = "+ z +".<br>"); 
 
 z = (x + y)/2;
@@ -143,11 +143,57 @@ function nwd(h,g){	//	deklaracja i inicjalizacja funkcji nwd z dwoma parametrami
 	}
 	return h;  //zwracanie zmiennej h
 }
-
-document.write("NWD 25 i 5 = "+ nwd(25,5) +";<br>"); //wywolanie funkcji nwd z parametrami 25 i 5
+var pierwszaLiczba =25;
+var drugaLiczba=5;
+document.write("NWD 25 i 5 = "+ nwd(pierwszaLiczba,drugaLiczba) +";<br>"); //wywolanie funkcji nwd z parametrami 25 i 5
+document.write("Pierwsza liczba = " + pierwszaLiczba+"<br>");
 document.write("NWD 80 i 24 = "+ nwd(80,24) +";<br>"); 
 document.write("NWD 81 i 36 = "+ nwd(81,36) +";<br>"); 
+document.write("<br><br> Tablica 4x4<br>"); 
+let A = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+];
 
+
+
+for (var w=0; w<4; w++){
+	document.write("Wiersz: "+w+":<br>");
+		
+		for(var k=0; k<4; k++){
+		document.write(A[w][k] +"; ");
+			if(k == 3){
+				document.write("<br>");
+			}
+		}
+
+}
+
+
+
+
+
+
+document.write("<br>Tablica i uzupełnianie wartości<br>");
+let B = [];
+var wiersze = 15;
+var kolumny = 15;
+var wartosc = 1;
+
+for(var w=0; w<wiersze; w++){
+ document.write("Wiersz: "+(w+1)+":<br>");
+ B[w] = []; 
+	for(var k=0; k<kolumny; k++){
+	B[w][k] = wartosc;
+	wartosc++;
+	document.write(B[w][k] +"; ");
+			if(k == kolumny -1){
+				document.write("<br>");
+			}
+	}
+}
 
 
 -->
