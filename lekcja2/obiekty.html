@@ -1,0 +1,66 @@
+<html>
+<head>
+
+<script type="text/javascript">
+<!--
+//klasy i obiekty
+
+
+	//tworzenie obiektu
+	
+var obiekt1 = {
+	wlasciwosc1: 'Nowak',
+	wlasciwosc2: 'Jan',
+	wlasciwosc3: 'informatyk',
+	pokazWlasciwosci: function (){
+		document.write(this.wlasciwosc1+" "+ this.wlasciwosc2 +" "+ this.wlasciwosc3 + "<br>");
+	}
+}
+
+
+obiekt1.pokazWlasciwosci();  //wywołanie funkcji pokaz z obiektu1
+
+	//dodawanie nowych wlasciwosci do obiektu
+	obiekt1.wiek = 28; //dodanie wieku do obiektu obiekt1
+	
+	obiekt1.wypiszWiek =                                         //dodanie funkcji wypiszWiek do obiekt1
+		function() {
+			document.write("Wiek: "+this.wiek+" "+ "lat.<br>");
+		}
+	obiekt1.wypiszWiek();  //wywołanie nowej funkcji z obiektu obiekt1
+	
+
+
+ // tworzenie obiektu z konstruktorem
+ 
+ 
+class Samochod{   //deklaracja klasy Samochod
+
+	constructor(m, p){    //konstruktor obieku
+	this.model = m;    
+	this.producent = p;
+	}
+	zwrocModel = function (){        //funkcja wewnatrz obiektu Samochod
+		return this.model;
+	}
+	zwrocProducenta = function (){	//funkcja wewnatrz obiektu Samochod
+		return this.producent;
+	}
+}
+
+var samochod1 = new Samochod("E36", "BMW");   //deklaracja i inicjalizacja obiektu samochod1 klasy Saomochod
+var m = samochod1.zwrocModel();      // wywołanie funkcji wewnatrz obiektu samochod1
+var p = samochod1.zwrocProducenta();
+document.write(m+" "+p);
+-->
+
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
