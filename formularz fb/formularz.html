@@ -1,0 +1,1035 @@
+<html>
+<head>
+	<title>Formularz rejestracyjny</title>
+	<style>
+		#form{
+    background-color: rgb(255, 255, 255);
+    box-shadow:0px 10px 15px rgb(216, 216, 216);
+    text-align: left;
+    border: 1px solid rgb(255, 255, 255);
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+  
+
+}
+hr{
+    border-top: 1px solid rgb(200, 200, 200);
+   border-bottom: none;
+   border-left:none;
+   border-right:none;
+  
+}
+
+#form #header {
+margin: 10px;
+font-family:Arial, Helvetica, sans-serif;
+font-size: 32px;
+font-weight: bold;
+}
+#form #header p{
+font-family:Arial, Helvetica, sans-serif;
+font-size: 14px;
+font-weight: normal;
+margin:0px;
+color: rgb(120, 120, 120);
+}
+
+
+#registration {
+    width: 380px;
+    height: 500px;
+    margin:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+   
+}
+
+#nameContainer{
+    margin-top: 10px;
+    
+}
+
+
+#nameContainer input{
+    width: 184px;
+    
+ 
+}
+#nameContainer input:last-child{
+    
+    margin-left: 6px;
+    
+}
+#mailContainer{
+    margin-top: 10px;
+}
+#lmail{
+    width:378px;
+    height:36px;
+}
+input{
+    background-color: rgb(244, 244, 244);
+    border-radius: 4px;
+    border: 1px solid rgb(208, 208, 208);
+    padding-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: 14px;
+    height: 36px;
+    background-position: calc(100% - 10px)  10px;
+    background-repeat: no-repeat;
+ 
+}
+
+input:focus{
+   
+    outline: none;
+ 
+    
+}
+
+#passwordContainer{
+    margin-top: 10px;
+}
+#lpasssword{
+    width:378px;
+    height:36px;
+}
+
+#birthDay{
+    margin-top: 10px;
+}
+
+select{
+    height:36px;
+    width: 119px;
+    margin-right: 6px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    border: 1px solid rgb(208, 208, 208);
+    padding-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#birthDay select:last-child{
+    margin-right:0px;
+}
+#birthDayLabel{
+    text-align:left;
+    margin-bottom:5px;
+    font-size:12px;
+    color: rgb(90, 90, 90);
+    
+}
+span{
+    margin-top:8px;
+}
+.labels{
+    border: 1px solid rgb(208, 208, 208);
+    height: 36px;
+    width:182px;
+    display: inline-block;
+    margin-right: 6px;
+    border-radius: 4px;
+    
+}
+.labels:nth-child(2){
+    margin-right: 0px;
+}
+.labelOther{
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 4px;
+    height: 36px;
+    width:375px;
+    display: inline-block;
+}
+span label{
+    float:left;
+    padding: 10 28px 0 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    
+}
+span input{
+    margin-right:10px;
+    
+    float:right;
+}
+#gender{
+    margin-top:10px;
+    text-align:left;
+    margin-bottom:5px;
+    font-size:12px;
+    color: rgb(90, 90, 90);
+}
+#inneDiv{
+    margin-top:10px;
+    text-align:left;
+    margin-bottom:5px;
+    font-size:12px;
+    color: rgb(90, 90, 90);
+    display: none;
+}
+#selectOther{
+    width:376px;
+    
+}
+#identity{
+    margin-top:5px;
+    
+    margin-bottom:5px;
+    font-size:12px;
+}
+#linne{
+    width:378px;
+    height:36px;
+}
+#opis{
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:10px;
+    text-align: left;
+}
+
+
+span input{
+    margin-top:0px;
+}
+/* 
+a
+*/
+	</style>
+</head>
+
+
+
+<body>
+	<center>
+	<div id="form">
+		<div id="header">
+			Zarejestruj sie
+		<p>To szybkie i proste.</p>
+
+	</div>
+
+
+
+
+
+
+	<hr>
+		<div id="registration">
+		
+			<form>
+				<div id="nameContainer">
+				<!--<label for="fname">First name:</label><br>-->
+				<input type="text" id="fname" name="fname" placeholder="Imie" onfocusout="walidacjaImienia()" onkeyup="walidacjaImienia()">
+				<!-- <label for="lname">Last name:</label><br> -->
+				<input type="text" id="lname" name="lname" placeholder="Nazwisko" onfocusout="walidacjaNazwiska()" onkeyup="walidacjaNazwiska()">
+			</div>
+			<div id="mailContainer">
+				<input type="text" id="lmail" name="lmail" placeholder="Adres e-mail" onfocusout="walidacjaMaila()" onkeyup="walidacjaMaila()">
+			</div>
+			<div id="passwordContainer">
+				<input type="password" id="lpasssword" name="lpassword" placeholder="Haslo" onfocusout="walidacjaHasla()" onkeyup="walidacjaHasla()">
+			</div>
+			<div id="birthDay">
+				<div id="birthDayLabel">
+					<label for="">Data urodzenia</label>
+				</div>
+				
+				<div>
+				<select id="selectDay" onclick="walidacjaDaty()">
+					<option>
+						01
+						</option>
+						<option>
+						02
+						</option>
+						<option>
+						03
+						</option>
+						<option>
+						04
+						</option>
+						<option>
+						05
+						</option>
+						<option>
+						06
+						</option>
+						<option>
+						07
+						</option>
+						<option>
+						08
+						</option>
+						<option>
+						09
+						</option>
+						<option>
+						10
+						</option>
+						<option>
+						11
+						</option>
+						<option>
+						12
+						</option>
+						<option>
+						13
+						</option>
+						<option>
+						14
+						</option>
+						<option>
+						15
+						</option>
+						<option>
+						16
+						</option>
+						<option>
+						17
+						</option>
+						<option>
+						18
+						</option>
+						<option>
+						19
+						</option>
+						<option>
+						20
+						</option>
+						<option>
+						21
+						</option>
+						<option>
+						22
+						</option>
+						<option>
+						23
+						</option>
+						<option>
+						24
+						</option>
+						<option>
+						25
+						</option>
+						<option>
+						26
+						</option>
+						<option>
+						27
+						</option>
+						<option>
+						28
+						</option>
+						<option>
+						29
+						</option>
+						<option>
+						30
+						</option>
+						<option>
+						31
+						</option>
+						
+
+				</select>
+				<select id="selectMonth" onclick="walidacjaDaty()">
+					<option>
+						styczen
+						</option>
+						<option>
+						luty
+						</option>
+						<option>
+						marzec
+						</option>
+						<option>
+						kwiecien
+						</option>
+						<option>
+						maj
+						</option>
+						<option>
+						czerwiec
+						</option>
+						<option>
+						lipiec
+						</option>
+						<option>
+						sierpien
+						</option>
+						<option>
+						wrzesien
+						</option>
+						<option>
+						pazdziernik
+						</option>
+						<option>
+						listopad
+						</option>
+						<option>
+						grudzien
+						</option>
+						
+
+				</select>
+				<select id="selectYear" onclick="walidacjaDaty()">
+					<option>
+						1905
+						</option>
+						<option>
+						1906
+						</option>
+						<option>
+						1907
+						</option>
+						<option>
+						1908
+						</option>
+						<option>
+						1909
+						</option>
+						<option>
+						1910
+						</option>
+						<option>
+						1911
+						</option>
+						<option>
+						1912
+						</option>
+						<option>
+						1913
+						</option>
+						<option>
+						1914
+						</option>
+						<option>
+						1915
+						</option>
+						<option>
+						1916
+						</option>
+						<option>
+						1917
+						</option>
+						<option>
+						1918
+						</option>
+						<option>
+						1919
+						</option>
+						<option>
+						1920
+						</option>
+						<option>
+						1921
+						</option>
+						<option>
+						1922
+						</option>
+						<option>
+						1923
+						</option>
+						<option>
+						1924
+						</option>
+						<option>
+						1925
+						</option>
+						<option>
+						1926
+						</option>
+						<option>
+						1927
+						</option>
+						<option>
+						1928
+						</option>
+						<option>
+						1929
+						</option>
+						<option>
+						1930
+						</option>
+						<option>
+						1931
+						</option>
+						<option>
+						1932
+						</option>
+						<option>
+						1933
+						</option>
+						<option>
+						1934
+						</option>
+						<option>
+						1935
+						</option>
+						<option>
+						1936
+						</option>
+						<option>
+						1937
+						</option>
+						<option>
+						1938
+						</option>
+						<option>
+						1939
+						</option>
+						<option>
+						1940
+						</option>
+						<option>
+						1941
+						</option>
+						<option>
+						1942
+						</option>
+						<option>
+						1943
+						</option>
+						<option>
+						1944
+						</option>
+						<option>
+						1945
+						</option>
+						<option>
+						1946
+						</option>
+						<option>
+						1947
+						</option>
+						<option>
+						1948
+						</option>
+						<option>
+						1949
+						</option>
+						<option>
+						1950
+						</option>
+						<option>
+						1951
+						</option>
+						<option>
+						1952
+						</option>
+						<option>
+						1953
+						</option>
+						<option>
+						1954
+						</option>
+						<option>
+						1955
+						</option>
+						<option>
+						1956
+						</option>
+						<option>
+						1957
+						</option>
+						<option>
+						1958
+						</option>
+						<option>
+						1959
+						</option>
+						<option>
+						1960
+						</option>
+						<option>
+						1961
+						</option>
+						<option>
+						1962
+						</option>
+						<option>
+						1963
+						</option>
+						<option>
+						1964
+						</option>
+						<option>
+						1965
+						</option>
+						<option>
+						1966
+						</option>
+						<option>
+						1967
+						</option>
+						<option>
+						1968
+						</option>
+						<option>
+						1969
+						</option>
+						<option>
+						1970
+						</option>
+						<option>
+						1971
+						</option>
+						<option>
+						1972
+						</option>
+						<option>
+						1973
+						</option>
+						<option>
+						1974
+						</option>
+						<option>
+						1975
+						</option>
+						<option>
+						1976
+						</option>
+						<option>
+						1977
+						</option>
+						<option>
+						1978
+						</option>
+						<option>
+						1979
+						</option>
+						<option>
+						1980
+						</option>
+						<option>
+						1981
+						</option>
+						<option>
+						1982
+						</option>
+						<option>
+						1983
+						</option>
+						<option>
+						1984
+						</option>
+						<option>
+						1985
+						</option>
+						<option>
+						1986
+						</option>
+						<option>
+						1987
+						</option>
+						<option>
+						1988
+						</option>
+						<option>
+						1989
+						</option>
+						<option>
+						1990
+						</option>
+						<option>
+						1991
+						</option>
+						<option>
+						1992
+						</option>
+						<option>
+						1993
+						</option>
+						<option>
+						1994
+						</option>
+						<option>
+						1995
+						</option>
+						<option>
+						1996
+						</option>
+						<option>
+						1997
+						</option>
+						<option>
+						1998
+						</option>
+						<option>
+						1999
+						</option>
+						<option>
+						2000
+						</option>
+						<option>
+						2001
+						</option>
+						<option>
+						2002
+						</option>
+						<option>
+						2003
+						</option>
+						<option>
+						2004
+						</option>
+						<option>
+						2005
+						</option>
+						<option>
+						2006
+						</option>
+						<option>
+						2007
+						</option>
+						<option>
+						2008
+						</option>
+						<option>
+						2009
+						</option>
+						<option>
+						2010
+						</option>
+						<option>
+						2011
+						</option>
+						<option>
+						2012
+						</option>
+						<option>
+						2013
+						</option>
+						<option>
+						2014
+						</option>
+						<option>
+						2015
+						</option>
+						<option>
+						2016
+						</option>
+						<option>
+						2017
+						</option>
+						<option>
+						2018
+						</option>
+						<option>
+						2019
+						</option>
+						<option>
+						2020
+						</option>
+						<option>
+						2021
+						</option>
+						<option>
+						2022
+						</option>
+						<option>
+						2023
+						</option>
+						<option>
+						2024
+						</option>
+						
+
+				</select>
+			</div>
+
+
+			<div id="gender">Płeć
+				
+				<div id="selection">
+				<span class="labels">
+					<label for="female">Kobieta</label>
+					<input type="radio" id="female" value="Kobieta" name="gender" onclick="schowaj()">
+				</span>
+				<span class="labels">
+					<label for="male">Mężczyzna</label>
+					<input type="radio" id="male" value="Mezczyzna" name="gender" onclick="schowaj()">
+				</span>
+				<span class="labelOther">
+					<label for="inne">Ustawienia niestandardowe</label>
+					<input type="radio" id="inne" value="Inne" name="gender" onclick="wyswietl()">
+				</span>
+				</div>
+			</div>
+
+			</div>
+			
+			<div id="inneDiv">
+				<select id="selectOther">
+					<option selected="1" value="" disabled="1">Wybierz zaimek</option>
+					<option>
+						Ona: Zloz jej zyczenia urodzinowe!
+					</option>
+					<option>
+						On: Zloz jemu zyczenia urodzinowe!		
+					</option>
+				
+				</select>
+				<div id="identity"> 
+				Indentyfikacja
+				</div>
+				<div id="inneContainer">
+					<input type="text" id="linne" name="linne" placeholder="Plec (opcjonalnie)">
+				</div>
+				
+
+
+
+			</div>
+			<div id="opis"> 
+				<p>Osoby korzystające z naszej usługi mogły przesłać Twoje dane kontaktowe do Facebooka. Dowiedz się więcej.<br></p>
+				<p>Klikając przycisk Zarejestruj się, akceptujesz nasz Regulamin. Zasady ochrony prywatności informują, w jaki sposób gromadzimy, użytkujemy i udostępniamy dane użytkowników, a Zasady dotyczące plików cookie informują jak korzystamy z plików cookie i podobnych technologii. Możesz otrzymywać powiadomienia SMS z Facebooka, z których możesz zrezygnować w dowolnej chwili.
+				</p>
+				</div>
+			
+				<button type="button" onclick="zarejestruj()">Zerejstruj sie</button> 
+			
+			</form> 
+			
+		</div>
+	</div>
+</center>
+<script>
+	function zarejestruj(){
+		var correct;
+		
+
+		if(walidacjaHasla()&&walidacjaImienia()&&walidacjaNazwiska()&&walidacjaMaila()&&walidacjaDaty()){
+			correct = true;
+			console.log("Poprawne dane!");
+		}
+		else{
+			correct = false;
+			console.log("Niepoprawne dane!");
+		}
+
+	
+	}
+
+
+	function wyswietl(){
+		document.getElementById("inneDiv").style.display="block";
+		document.getElementById("form").style.height="700px";
+	}
+
+	function schowaj(){
+		document.getElementById("inneDiv").style.display="none";
+		document.getElementById("form").style.height="600px";
+	}
+	
+	function walidacjaHasla(){
+	
+		var pass = document.getElementById("lpasssword").value;
+		var correct = true;
+		var kodZnaku;
+		var znakSpecjalny= false;
+		var cyfra = false;
+		var malaLitera = false;
+		var duzaLitera = false;
+		var i = 0;
+		
+		if (pass.length < 8 ){
+			correct = false;
+		}
+		else{
+			while (pass.length > i){
+				var kodZnaku = pass.charCodeAt(i);
+
+					if ((kodZnaku >= 33 && kodZnaku <= 47)){
+					znakSpecjalny = true;
+					}
+				
+					if ((kodZnaku >= 48 && kodZnaku <= 57)){
+					cyfra = true;
+					}
+					
+				
+					if ((kodZnaku >= 65 && kodZnaku <= 90)){	
+					duzaLitera = true;
+					}
+					if ((kodZnaku >= 97 && kodZnaku <= 122)){
+					malaLitera = true;
+					}
+				i++;
+				}
+			}
+			
+		if((malaLitera == false)||(duzaLitera == false)||(cyfra==false)||(znakSpecjalny ==false)){
+			correct = false;
+		}
+		else{
+		correct = true;
+		}
+		console.log(i + "  " + pass.length +"  "+ malaLitera + " "+duzaLitera +" "+znakSpecjalny +" "+cyfra);
+
+		if(correct===false){
+			
+			setStyle("lpasssword","red","url('Error.png')");
+			
+	
+	}
+		else{
+		
+			setStyle("lpasssword", "rgb(208, 208, 208)", "none");
+	}
+	
+	return correct;
+}
+	
+
+	function walidacjaImienia(){
+	
+	var imie = document.getElementById("fname").value;
+	var correct = true;
+	if (imie.length < 2 ){
+		correct = false;
+	}
+
+	if(correct===false){
+	setStyle("fname", "red",  "url('Error.png')");
+	}
+	else{
+		setStyle("fname", "rgb(208, 208, 208)", "none");	
+	}
+	return correct;
+}
+
+function walidacjaNazwiska(){
+	
+	var nazwisko = document.getElementById("lname").value;
+	var correct = true;
+	if (nazwisko.length < 3 ){
+		correct = false;
+	}
+
+	if(correct===false){
+		setStyle("lname", "red",  "url('Error.png')");
+	}
+	else{
+		setStyle("lname", "rgb(208, 208, 208)", "none");
+	}
+	return correct;
+}
+
+function walidacjaMaila(){
+	
+	var m = document.getElementById("lmail").value;
+	var correct = true;
+	if ((m.includes("@"))&&(m.includes("."))){
+				    
+					var poMalpie = m.slice(m.indexOf('@') + 1);
+					var pozycjaKropki = poMalpie.lastIndexOf(".") + 1;
+					var dlugoscPoMalpie = poMalpie.length;
+					var pozycjaMalpy = m.indexOf("@");
+					
+					if(poMalpie.includes(".")){
+					
+						if ((dlugoscPoMalpie - pozycjaKropki > 1)&&(pozycjaMalpy > 1)&&( pozycjaKropki > 2 )){
+						correct = true;
+						}
+						else{
+						correct = false;
+						}
+						if(poMalpie.includes("..")){
+							correct = false;
+						}
+					}
+					else{
+					correct = false;
+					}
+				}
+				else{
+				correct = false;
+				}
+
+	if(correct===false){
+		setStyle("lmail", "red",  "url('Error.png')");
+	}
+	else{
+		setStyle("lmail", "rgb(208, 208, 208)",  "none");
+	
+	}
+	return correct;
+}
+
+function walidacjaDaty(){
+	var dzien = document.getElementById("selectDay").value;
+	const miesiac = document.getElementById("selectMonth").value;
+	var rok = document.getElementById("selectYear").value;
+	var sformatowanaData;
+	
+	console.log("dzien: "+dzien+" miesiac: "+miesiac+" rok: "+rok);
+	switch (miesiac){
+		case "styczen": sformatowanaData = rok+"-"+"01-"+dzien;
+		break;
+		case "luty": sformatowanaData = rok+"-"+"02-"+dzien;
+		break;
+		case "marzec": sformatowanaData = rok+"-"+"03-"+dzien;
+		break;
+		case "kwiecien": sformatowanaData = rok+"-"+"04-"+dzien;
+		break;
+		case "maj": sformatowanaData = rok+"-"+"05-"+dzien;
+		break;
+		case "czerwiec": sformatowanaData = rok+"-"+"06-"+dzien;
+		break;
+		case "lipiec": sformatowanaData = rok+"-"+"07-"+dzien;
+		break;
+		case "sierpien": sformatowanaData = rok+"-"+"08-"+dzien;
+		break;
+		case "wrzesien": sformatowanaData = rok+"-"+"09-"+dzien;
+		break;
+		case "pazdziernik": sformatowanaData = rok+"-"+"10-"+dzien;
+		break;
+		case 'listopad': sformatowanaData = rok+"-"+"11-"+dzien;
+		break;
+		case 'grudzien': sformatowanaData = rok+"-"+"12-"+dzien;
+	}
+	console.log(sformatowanaData);
+
+	
+	let dataKoncowa = new Date(sformatowanaData);
+	console.log(dataKoncowa);
+
+if (!isNaN(dataKoncowa)) {
+  let day = dataKoncowa.getDate();
+  day = day < 10 ? "0" + day : day;
+  let month = dataKoncowa.getMonth() + 1;
+  month = month < 10 ? "0" + month : month;
+  const year = dataKoncowa.getFullYear();
+
+  const resultDate = `${year}-${month}-${day}`;
+  if(sformatowanaData === resultDate){
+	console.log("Sprawdzona data: "+resultDate); 
+	document.getElementById("selectYear").style.borderColor = "rgb(208, 208, 208)";
+	document.getElementById("selectMonth").style.borderColor = "rgb(208, 208, 208)";
+	document.getElementById("selectDay").style.borderColor = "rgb(208, 208, 208)";
+	return true;
+}
+  else{
+	console.log("Nieprawidlowa data!");  
+	document.getElementById("selectYear").style.borderColor = "red";
+	document.getElementById("selectMonth").style.borderColor = "red";
+	document.getElementById("selectDay").style.borderColor = "red";
+	return false;
+  }
+ 
+}	
+		}
+		function setStyle(inputId, col, ico){
+		document.getElementById(inputId).style.backgroundImage = ico;
+		document.getElementById(inputId).style.borderColor = col;
+		}
+
+
+</script>
+</body>
+
+</html>
